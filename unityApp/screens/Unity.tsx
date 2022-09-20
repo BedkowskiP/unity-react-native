@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
 import { View, Button } from 'react-native';
-import { CommonActions } from '@react-navigation/native';
+import { CommonActions, useRoute } from '@react-navigation/native';
 
 interface IMessage {
   gameObject: string;
@@ -9,25 +9,23 @@ interface IMessage {
   message: string;
 }
 
-const Unity = ({ navigation, route }: { navigation: undefined, route: any}) => {
+const Unity = ({ navigation}: { navigation: undefined}) => {
+  let route: any = useRoute();
   const unityRef = useRef<UnityView>(null);
-  const starting_param = route.params.starting_param;
 
-  console.log('Starting parameter: '+starting_param);
-
-  const setValue = (value) => {
-    console.log('Adding value of '+value);
-    unityRef.current?.postMessage('AppManager', 'setValue', value.toString());
-  }
+  const shape = route.params?.shape;
+  const color = route.params?.color;
 
   const closeUnity = () => {
     unityRef.current?.unloadUnity();
     setTimeout(() => {
-      navigation.dispatch(CommonActions.reset({ //reset the state of unity, get rid of existing parent error
+      navigation.dispatch(CommonActions.reset({
         index: 1, 
-        routes: [
-          { name: 'Unity', params: { starting_param: null} }
-        ] 
+        routes: [{ name: 'Unity',
+        params: {
+          shape: "Cube",
+          color: "Red",
+      } }] 
       }));
       navigation.navigate('Home');
     }, 500);
@@ -41,11 +39,9 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any}) => {
         message: 'message',
       };
       unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
-      if(starting_param != null) setValue(starting_param);
+      if(shape != null && color != null ) unityRef.current.postMessage("SceneManager", "loadScene", shape+";"+color);
     }
-  }, [starting_param]);
-
-  var val_10 = 10;
+  }, []);
 
   return (
     <View style={{ flex: 1 }}>
@@ -53,7 +49,6 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any}) => {
         ref={unityRef}
         style={{ flex: 1 }}
         onUnityMessage={(result) => { console.log('onUnityMessage', result.nativeEvent.message) }} />
-      <Button title="Add 10" onPress={() => setValue(val_10)} />
       <Button title="Close Unity Screen" onPress={() => closeUnity()} />
     </View>
   );
