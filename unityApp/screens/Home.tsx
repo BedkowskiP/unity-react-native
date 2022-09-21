@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
-import { Button, Pressable, Text, View } from 'react-native';
-import {Picker} from '@react-native-picker/picker';
+import React, { useState } from 'react';
+import { Button, View } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
 const Home = ({ navigation }: { navigation: undefined }) => {
   const [shape, setShape] = useState("");
@@ -14,8 +14,8 @@ const Home = ({ navigation }: { navigation: undefined }) => {
   }
 
   return (
-    <View style ={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Picker style = {{ width: 400 }}
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Picker style={{ width: 400 }}
         selectedValue={shape}
         onValueChange={(itemValue, itemIndex) =>
           setShape(itemValue)
@@ -25,7 +25,7 @@ const Home = ({ navigation }: { navigation: undefined }) => {
         <Picker.Item label="Sphere" value="Sphere" />
         <Picker.Item label="Cylinder" value="Cylinder" />
       </Picker>
-      <Picker style = {{ width: 400 }}
+      <Picker style={{ width: 400 }}
         selectedValue={color}
         onValueChange={(itemValue, itemIndex) =>
           setColor(itemValue)
@@ -36,7 +36,6 @@ const Home = ({ navigation }: { navigation: undefined }) => {
         <Picker.Item label="Blue" value="Blue" />
       </Picker>
       <Button title="Start Unity" onPress={() => goToUnity()} />
-
     </View>
   );
 };
