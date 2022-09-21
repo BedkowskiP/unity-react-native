@@ -28,7 +28,7 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
         message: 'message',
       };
       unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
-      if (shape != null && color != null) unityRef.current.postMessage("SceneManager", "loadScene", shape + ";" + color);
+      if (shape != null && color != null) unityRef.current.postMessage("SceneManager", "startUnity", shape + ";" + color);
     }
   }, [shape, color]);
 
