@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
-import { View, Button } from 'react-native';
+import { View, Button, NativeSyntheticEvent } from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 
 interface IMessage {
@@ -9,35 +9,53 @@ interface IMessage {
   message: string;
 }
 
+let messageFromUnity = {
+  shape: "",
+  color: ""
+}
+
 const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => {
   const unityRef = useRef<UnityView>(null);
 
-  const shape = route.params.shape;
-  const color = route.params.color;
+  const parsedMess = JSON.stringify(route.params);
 
   const closeUnity = () => {
-    unityRef.current?.unloadUnity();
-    navigation.goBack();
+    unityRef.current?.postMessage("SceneManager", "callLastParams", "");
+    setTimeout(() => {
+      unityRef.current?.unloadUnity();
+      navigation.navigate('Home', {
+        shape: messageFromUnity.shape,
+        color: messageFromUnity.color
+      });
+    }, 100);
+
   }
 
   useEffect(() => {
     if (unityRef?.current) {
       const message: IMessage = {
-        gameObject: 'gameObject',
-        methodName: 'methodName',
-        message: 'message',
+        gameObject: "SceneManager",
+        methodName: "startUnity",
+        message: parsedMess,
       };
       unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
-      if (shape != null && color != null) unityRef.current.postMessage("SceneManager", "startUnity", shape + ";" + color);
     }
-  }, [shape, color]);
+  }, []);
+
+  const onUnityMessageController = (message: string) => {
+    try {
+      messageFromUnity = JSON.parse(message);
+    } catch {
+      console.log("log", message);
+    }
+  }
 
   return (
     <View style={{ flex: 1 }}>
       <UnityView
         ref={unityRef}
         style={{ flex: 1 }}
-        onUnityMessage={(result) => { console.log('onUnityMessage', result.nativeEvent.message) }} />
+        onUnityMessage={(result) => { onUnityMessageController(result.nativeEvent.message) }} />
       <Button title="Close Unity Screen" onPress={() => closeUnity()} />
     </View >
   );
