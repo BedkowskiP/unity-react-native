@@ -7,8 +7,10 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
   const [color, setColor] = useState("");
   var lastShape = "";
   var lastColor = "";
+  var isTextVisible = false;
 
   if (route?.params) {
+    isTextVisible = true;
     lastShape = route.params.shape;
     lastColor = route.params.color;
   }
@@ -42,10 +44,10 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
         <Picker.Item label="Green" value="Green" />
         <Picker.Item label="Blue" value="Blue" />
       </Picker>
-      <Button title="Start Unity" onPress={() => goToUnity()} />
+      <Button disabled={shape == "" || color == ""} title="Start Unity" onPress={() => goToUnity()} />
       <View style={{ width: 400, padding: 20 }}>
-        <Text style={{ fontSize: 17 }}>Last shape: {lastShape}</Text>
-        <Text style={{ fontSize: 17 }}>Last color: {lastColor}</Text>
+        {isTextVisible && <Text style={{ fontSize: 17 }}>Last shape: {lastShape}</Text>}
+        {isTextVisible && <Text style={{ fontSize: 17 }}>Last color: {lastColor}</Text>}
       </View>
     </View>
   );

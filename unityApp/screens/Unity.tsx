@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
 import { View, Button, NativeSyntheticEvent } from 'react-native';
-import { CommonActions } from '@react-navigation/native';
 
 interface IMessage {
   gameObject: string;
