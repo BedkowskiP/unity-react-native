@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Text, View } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+import { Picker } from "@react-native-picker/picker";
+import {
+  gyroscope
+} from "react-native-sensors";
+import { setUpdateIntervalForType, SensorTypes } from "react-native-sensors";
+
+
+
 
 const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
   const [shape, setShape] = useState("");
@@ -52,5 +59,15 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
     </View>
   );
 };
+
+setUpdateIntervalForType(SensorTypes.gyroscope, 100);
+
+const subscription = gyroscope.subscribe(({ x, y, z, timestamp }) =>
+  console.log({ x, y, z, timestamp })
+);
+setTimeout(() => {
+  subscription.unsubscribe();
+}, 10000);
+
 
 export default Home;
