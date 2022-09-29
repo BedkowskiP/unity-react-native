@@ -9,22 +9,27 @@ interface IMessage {
 }
 
 let messageFromUnity = {
-  shape: "",
-  color: ""
+  playerName: "",
+  host: false,
+  roomName: "",
+  playerColor: "Red"
 }
 
 const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => {
   const unityRef = useRef<UnityView>(null);
 
   const parsedMess = JSON.stringify(route.params);
+  console.log(parsedMess);
 
   const closeUnity = () => {
-    unityRef.current?.postMessage("SceneManager", "callLastParams", "");
+    //unityRef.current?.postMessage("CreateAndJoinRooms", "callLastParams", "");
     setTimeout(() => {
       unityRef.current?.unloadUnity();
       navigation.navigate('Home', {
-        shape: messageFromUnity.shape,
-        color: messageFromUnity.color
+        playerName: messageFromUnity.playerName,
+        host: messageFromUnity.host,
+        roomName: messageFromUnity.roomName,
+        playerColor: "Red",
       });
     }, 100);
 
@@ -33,8 +38,8 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
   useEffect(() => {
     if (unityRef?.current) {
       const message: IMessage = {
-        gameObject: "SceneManager",
-        methodName: "startUnity",
+        gameObject: "VariablesFromReact",
+        methodName: "LoadPlayerInformation",
         message: parsedMess,
       };
       unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
@@ -44,6 +49,7 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
   const onUnityMessageController = (message: string) => {
     try {
       messageFromUnity = JSON.parse(message);
+      console.log("JSON", messageFromUnity);
     } catch {
       console.log("log", message);
     }
