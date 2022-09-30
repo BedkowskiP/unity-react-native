@@ -19,27 +19,30 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
   const unityRef = useRef<UnityView>(null);
 
   const parsedMess = JSON.stringify(route.params);
-  console.log(parsedMess);
 
   const closeUnity = () => {
-    //unityRef.current?.postMessage("CreateAndJoinRooms", "callLastParams", "");
+    console.log("Calling last parameters...");
+    unityRef.current?.postMessage("VariablesFromReact", "callLastParams", "");
+    unityRef.current?.postMessage("VariablesFromReact", "DisconnectPlayer", "");
+  }
+
+  const returnToHome = () => {
     setTimeout(() => {
       unityRef.current?.unloadUnity();
       navigation.navigate('Home', {
         playerName: messageFromUnity.playerName,
-        host: messageFromUnity.host,
+        hostRoom: messageFromUnity.host,
         roomName: messageFromUnity.roomName,
-        playerColor: "Red",
+        playerColor: "Blue",
       });
     }, 100);
-
   }
 
   useEffect(() => {
     if (unityRef?.current) {
       const message: IMessage = {
         gameObject: "VariablesFromReact",
-        methodName: "LoadPlayerInformation",
+        methodName: "loadPlayerInformation",
         message: parsedMess,
       };
       unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
@@ -51,7 +54,11 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
       messageFromUnity = JSON.parse(message);
       console.log("JSON", messageFromUnity);
     } catch {
-      console.log("log", message);
+      if (message == "Disconnected") {
+        console.log("log", message);
+        returnToHome();
+      }
+      else console.log("log", message);
     }
   }
 

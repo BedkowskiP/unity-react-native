@@ -19,9 +19,9 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
     setTimeout(() =>
       navigation.navigate('Unity', {
         playerName: playerName,
-        host: param,
+        hostRoom: param,
         roomName: roomName,
-        playerColor: "Red",
+        playerColor: "Blue",
       }), 500);
 
   }
