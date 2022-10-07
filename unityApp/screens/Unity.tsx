@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
-import { View, Button, NativeSyntheticEvent } from 'react-native';
+import { View, Button } from 'react-native';
 
 interface IMessage {
   gameObject: string;
@@ -21,21 +21,21 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
   const parsedMess = JSON.stringify(route.params);
 
   const closeUnity = () => {
-    console.log("Calling last parameters...");
     unityRef.current?.postMessage("VariablesFromReact", "callLastParams", "");
     unityRef.current?.postMessage("VariablesFromReact", "DisconnectPlayer", "");
   }
 
   const returnToHome = () => {
+    //unityRef.current?.unloadUnity();
     setTimeout(() => {
-      unityRef.current?.unloadUnity();
       navigation.navigate('Home', {
         playerName: messageFromUnity.playerName,
         hostRoom: messageFromUnity.host,
         roomName: messageFromUnity.roomName,
         playerColor: "Blue",
       });
-    }, 100);
+    }, 1000)
+
   }
 
   useEffect(() => {
@@ -52,7 +52,6 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
   const onUnityMessageController = (message: string) => {
     try {
       messageFromUnity = JSON.parse(message);
-      console.log("JSON", messageFromUnity);
     } catch {
       if (message == "Disconnected") {
         console.log("log", message);

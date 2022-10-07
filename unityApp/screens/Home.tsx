@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
 
 const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
   const [playerName, setPlayerName] = useState("");
@@ -11,8 +10,8 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
 
   if (route?.params) {
     isTextVisible = true;
-    lastPlayerName = route.params.shape;
-    lastRoomName = route.params.color;
+    lastPlayerName = route.params.playerName;
+    lastRoomName = route.params.roomName;
   }
 
   const goToUnity = (param: boolean) => {
@@ -43,8 +42,8 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
       <Button disabled={playerName == "" || roomName == ""} title="Join room" onPress={() => goToUnity(false)} />
       <Button disabled={playerName == "" || roomName == ""} title="Host room" onPress={() => goToUnity(true)} />
       <View style={{ width: 400, padding: 20 }}>
-        {isTextVisible && <Text style={styles.text}>Last player name: {playerName}</Text>}
-        {isTextVisible && <Text style={styles.text}>Last room name: {roomName}</Text>}
+        {isTextVisible && <Text style={styles.text}>Last player name: {lastPlayerName}</Text>}
+        {isTextVisible && <Text style={styles.text}>Last room name: {lastRoomName}</Text>}
       </View>
     </View>
   );
