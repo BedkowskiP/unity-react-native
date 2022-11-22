@@ -1,3 +1,4 @@
+import { CommonActions } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
@@ -14,15 +15,12 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
     lastRoomName = route.params.roomName;
   }
 
-  const goToUnity = (param: boolean) => {
-    setTimeout(() =>
-      navigation.navigate('Unity', {
-        playerName: playerName,
-        hostRoom: param,
-        roomName: roomName,
-        playerColor: "Blue",
-      }), 500);
-
+  const goToUnity = () => {
+    navigation.navigate('Unity', {
+      playerName: playerName,
+      roomName: roomName,
+      playerColor: "0,0,1", //r,g,b colors
+    });
   }
 
   return (
@@ -39,8 +37,7 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
         onChangeText={setRoomName}
         value={roomName}
       />
-      <Button disabled={playerName == "" || roomName == ""} title="Join room" onPress={() => goToUnity(false)} />
-      <Button disabled={playerName == "" || roomName == ""} title="Host room" onPress={() => goToUnity(true)} />
+      <Button disabled={playerName == "" || roomName == ""} title="Start" onPress={() => goToUnity()} />
       <View style={{ width: 400, padding: 20 }}>
         {isTextVisible && <Text style={styles.text}>Last player name: {lastPlayerName}</Text>}
         {isTextVisible && <Text style={styles.text}>Last room name: {lastRoomName}</Text>}

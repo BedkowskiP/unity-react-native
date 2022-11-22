@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
 import { View, Button } from 'react-native';
+import { CommonActions } from '@react-navigation/native';
 
 interface IMessage {
   gameObject: string;
@@ -10,39 +11,34 @@ interface IMessage {
 
 let messageFromUnity = {
   playerName: "",
-  host: false,
   roomName: "",
-  playerColor: "Red"
+  playerColor: ""
 }
 
 const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => {
   const unityRef = useRef<UnityView>(null);
-
+  //unityRef.current?.resumeUnity();
   const parsedMess = JSON.stringify(route.params);
 
   const closeUnity = () => {
-    unityRef.current?.postMessage("VariablesFromReact", "callLastParams", "");
-    unityRef.current?.postMessage("VariablesFromReact", "DisconnectPlayer", "");
+    unityRef.current?.postMessage("ReactUnity", "sendPlayerInfo", "");
+    unityRef.current?.postMessage("ReactUnity", "disconnectButton", "");
   }
 
-  const returnToHome = () => {
+  const returnToHome = async () => {
     //unityRef.current?.unloadUnity();
-    setTimeout(() => {
-      navigation.navigate('Home', {
-        playerName: messageFromUnity.playerName,
-        hostRoom: messageFromUnity.host,
-        roomName: messageFromUnity.roomName,
-        playerColor: "Blue",
-      });
-    }, 1000)
-
+    navigation.navigate('Home', {
+      playerName: messageFromUnity.playerName,
+      roomName: messageFromUnity.roomName,
+      playerColor: messageFromUnity.playerColor,
+    });
   }
 
   useEffect(() => {
     if (unityRef?.current) {
       const message: IMessage = {
-        gameObject: "VariablesFromReact",
-        methodName: "loadPlayerInformation",
+        gameObject: "ReactUnity",
+        methodName: "getPlayerInfo",
         message: parsedMess,
       };
       unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
@@ -53,11 +49,11 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
     try {
       messageFromUnity = JSON.parse(message);
     } catch {
-      if (message == "Disconnected") {
+      if (message == "Leave unity") {
         console.log("log", message);
         returnToHome();
-      }
-      else console.log("log", message);
+        //unityRef.current?.postMessage("ReactUnity", "unloadUnity", "");
+      } else console.log("log", message);
     }
   }
 
