@@ -451,37 +451,26 @@ public:
 struct RequiredByNativeCodeAttribute_t855401D3C2EF3B44F4F1C3EE2DCD361CFC358D20  : public Attribute_t037CA9D9F3B742C063DB364D2EEBBF9FC5772C71
 {
 public:
-	// System.String UnityEngine.Scripting.RequiredByNativeCodeAttribute::<Name>k__BackingField
-	String_t* ___U3CNameU3Ek__BackingField_0;
 	// System.Boolean UnityEngine.Scripting.RequiredByNativeCodeAttribute::<Optional>k__BackingField
-	bool ___U3COptionalU3Ek__BackingField_1;
+	bool ___U3COptionalU3Ek__BackingField_0;
 	// System.Boolean UnityEngine.Scripting.RequiredByNativeCodeAttribute::<GenerateProxy>k__BackingField
-	bool ___U3CGenerateProxyU3Ek__BackingField_2;
+	bool ___U3CGenerateProxyU3Ek__BackingField_1;
 
 public:
-	inline static int32_t get_offset_of_U3CNameU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(RequiredByNativeCodeAttribute_t855401D3C2EF3B44F4F1C3EE2DCD361CFC358D20, ___U3CNameU3Ek__BackingField_0)); }
-	inline String_t* get_U3CNameU3Ek__BackingField_0() const { return ___U3CNameU3Ek__BackingField_0; }
-	inline String_t** get_address_of_U3CNameU3Ek__BackingField_0() { return &___U3CNameU3Ek__BackingField_0; }
-	inline void set_U3CNameU3Ek__BackingField_0(String_t* value)
+	inline static int32_t get_offset_of_U3COptionalU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(RequiredByNativeCodeAttribute_t855401D3C2EF3B44F4F1C3EE2DCD361CFC358D20, ___U3COptionalU3Ek__BackingField_0)); }
+	inline bool get_U3COptionalU3Ek__BackingField_0() const { return ___U3COptionalU3Ek__BackingField_0; }
+	inline bool* get_address_of_U3COptionalU3Ek__BackingField_0() { return &___U3COptionalU3Ek__BackingField_0; }
+	inline void set_U3COptionalU3Ek__BackingField_0(bool value)
 	{
-		___U3CNameU3Ek__BackingField_0 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___U3CNameU3Ek__BackingField_0), (void*)value);
+		___U3COptionalU3Ek__BackingField_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3COptionalU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(RequiredByNativeCodeAttribute_t855401D3C2EF3B44F4F1C3EE2DCD361CFC358D20, ___U3COptionalU3Ek__BackingField_1)); }
-	inline bool get_U3COptionalU3Ek__BackingField_1() const { return ___U3COptionalU3Ek__BackingField_1; }
-	inline bool* get_address_of_U3COptionalU3Ek__BackingField_1() { return &___U3COptionalU3Ek__BackingField_1; }
-	inline void set_U3COptionalU3Ek__BackingField_1(bool value)
+	inline static int32_t get_offset_of_U3CGenerateProxyU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(RequiredByNativeCodeAttribute_t855401D3C2EF3B44F4F1C3EE2DCD361CFC358D20, ___U3CGenerateProxyU3Ek__BackingField_1)); }
+	inline bool get_U3CGenerateProxyU3Ek__BackingField_1() const { return ___U3CGenerateProxyU3Ek__BackingField_1; }
+	inline bool* get_address_of_U3CGenerateProxyU3Ek__BackingField_1() { return &___U3CGenerateProxyU3Ek__BackingField_1; }
+	inline void set_U3CGenerateProxyU3Ek__BackingField_1(bool value)
 	{
-		___U3COptionalU3Ek__BackingField_1 = value;
-	}
-
-	inline static int32_t get_offset_of_U3CGenerateProxyU3Ek__BackingField_2() { return static_cast<int32_t>(offsetof(RequiredByNativeCodeAttribute_t855401D3C2EF3B44F4F1C3EE2DCD361CFC358D20, ___U3CGenerateProxyU3Ek__BackingField_2)); }
-	inline bool get_U3CGenerateProxyU3Ek__BackingField_2() const { return ___U3CGenerateProxyU3Ek__BackingField_2; }
-	inline bool* get_address_of_U3CGenerateProxyU3Ek__BackingField_2() { return &___U3CGenerateProxyU3Ek__BackingField_2; }
-	inline void set_U3CGenerateProxyU3Ek__BackingField_2(bool value)
-	{
-		___U3CGenerateProxyU3Ek__BackingField_2 = value;
+		___U3CGenerateProxyU3Ek__BackingField_1 = value;
 	}
 };
 
@@ -1437,12 +1426,12 @@ static void AndroidJNIHelper_t42BC87A499D1F8E320AC8D663692540AA0DE2847_CustomAtt
 static void AndroidJNI_t4ADD4E8322A2E7638103A35259232E333D8ABF85_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
 {
 	{
-		NativeHeaderAttribute_t7F0E4B53790AA75CDB4C44E6D644267F8FE3066C * tmp = (NativeHeaderAttribute_t7F0E4B53790AA75CDB4C44E6D644267F8FE3066C *)cache->attributes[0];
-		NativeHeaderAttribute__ctor_m0E83F29C5939F185D6E90541591802EB2845FD76(tmp, il2cpp_codegen_string_new_wrapper("\x4D\x6F\x64\x75\x6C\x65\x73\x2F\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x2F\x50\x75\x62\x6C\x69\x63\x2F\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x42\x69\x6E\x64\x69\x6E\x67\x73\x48\x65\x6C\x70\x65\x72\x73\x2E\x68"), NULL);
+		StaticAccessorAttribute_t7A16FF0FA31E38510BBC8BCA5AE56C3E67D5A2BA * tmp = (StaticAccessorAttribute_t7A16FF0FA31E38510BBC8BCA5AE56C3E67D5A2BA *)cache->attributes[0];
+		StaticAccessorAttribute__ctor_m0C3215256AEFAEFDDCBCD2BA9AA579CDBB230706(tmp, il2cpp_codegen_string_new_wrapper("\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x42\x69\x6E\x64\x69\x6E\x67\x73\x48\x65\x6C\x70\x65\x72\x73"), 2LL, NULL);
 	}
 	{
-		StaticAccessorAttribute_t7A16FF0FA31E38510BBC8BCA5AE56C3E67D5A2BA * tmp = (StaticAccessorAttribute_t7A16FF0FA31E38510BBC8BCA5AE56C3E67D5A2BA *)cache->attributes[1];
-		StaticAccessorAttribute__ctor_m0C3215256AEFAEFDDCBCD2BA9AA579CDBB230706(tmp, il2cpp_codegen_string_new_wrapper("\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x42\x69\x6E\x64\x69\x6E\x67\x73\x48\x65\x6C\x70\x65\x72\x73"), 2LL, NULL);
+		NativeHeaderAttribute_t7F0E4B53790AA75CDB4C44E6D644267F8FE3066C * tmp = (NativeHeaderAttribute_t7F0E4B53790AA75CDB4C44E6D644267F8FE3066C *)cache->attributes[1];
+		NativeHeaderAttribute__ctor_m0E83F29C5939F185D6E90541591802EB2845FD76(tmp, il2cpp_codegen_string_new_wrapper("\x4D\x6F\x64\x75\x6C\x65\x73\x2F\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x2F\x50\x75\x62\x6C\x69\x63\x2F\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x42\x69\x6E\x64\x69\x6E\x67\x73\x48\x65\x6C\x70\x65\x72\x73\x2E\x68"), NULL);
 	}
 	{
 		NativeConditionalAttribute_t659349956F06958D4D05443BD06FF5CDC767C88B * tmp = (NativeConditionalAttribute_t659349956F06958D4D05443BD06FF5CDC767C88B *)cache->attributes[2];
@@ -2296,12 +2285,12 @@ static void AndroidJNI_t4ADD4E8322A2E7638103A35259232E333D8ABF85_CustomAttribute
 static void AndroidJNI_t4ADD4E8322A2E7638103A35259232E333D8ABF85_CustomAttributesCacheGenerator_AndroidJNI_FromByteArray_mF9E0A8B97ADE25C3DDC59AB6CECF597AB346AAB2(CustomAttributesCache* cache)
 {
 	{
-		ObsoleteAttribute_t14BAC1669C0409EB9F28D72D664FFA6764ACD671 * tmp = (ObsoleteAttribute_t14BAC1669C0409EB9F28D72D664FFA6764ACD671 *)cache->attributes[0];
-		ObsoleteAttribute__ctor_mAC32A5CCD287DA84CDA9F08282C1C8B0DB7B9868(tmp, il2cpp_codegen_string_new_wrapper("\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x2E\x46\x72\x6F\x6D\x42\x79\x74\x65\x41\x72\x72\x61\x79\x20\x69\x73\x20\x6F\x62\x73\x6F\x6C\x65\x74\x65\x2E\x20\x55\x73\x65\x20\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x2E\x46\x72\x6F\x6D\x53\x42\x79\x74\x65\x41\x72\x72\x61\x79\x20\x6D\x65\x74\x68\x6F\x64\x20\x69\x6E\x73\x74\x65\x61\x64"), NULL);
+		ThreadSafeAttribute_t19BB6779619E58C8E3DF5198224E2BCB9E3D84B6 * tmp = (ThreadSafeAttribute_t19BB6779619E58C8E3DF5198224E2BCB9E3D84B6 *)cache->attributes[0];
+		ThreadSafeAttribute__ctor_m6FFAB202BA1302071542A4242796CC44C1782240(tmp, NULL);
 	}
 	{
-		ThreadSafeAttribute_t19BB6779619E58C8E3DF5198224E2BCB9E3D84B6 * tmp = (ThreadSafeAttribute_t19BB6779619E58C8E3DF5198224E2BCB9E3D84B6 *)cache->attributes[1];
-		ThreadSafeAttribute__ctor_m6FFAB202BA1302071542A4242796CC44C1782240(tmp, NULL);
+		ObsoleteAttribute_t14BAC1669C0409EB9F28D72D664FFA6764ACD671 * tmp = (ObsoleteAttribute_t14BAC1669C0409EB9F28D72D664FFA6764ACD671 *)cache->attributes[1];
+		ObsoleteAttribute__ctor_mAC32A5CCD287DA84CDA9F08282C1C8B0DB7B9868(tmp, il2cpp_codegen_string_new_wrapper("\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x2E\x46\x72\x6F\x6D\x42\x79\x74\x65\x41\x72\x72\x61\x79\x20\x69\x73\x20\x6F\x62\x73\x6F\x6C\x65\x74\x65\x2E\x20\x55\x73\x65\x20\x41\x6E\x64\x72\x6F\x69\x64\x4A\x4E\x49\x2E\x46\x72\x6F\x6D\x53\x42\x79\x74\x65\x41\x72\x72\x61\x79\x20\x6D\x65\x74\x68\x6F\x64\x20\x69\x6E\x73\x74\x65\x61\x64"), NULL);
 	}
 }
 static void AndroidJNI_t4ADD4E8322A2E7638103A35259232E333D8ABF85_CustomAttributesCacheGenerator_AndroidJNI_FromSByteArray_mA20709B6C87AF63CBD8DDD4D2DDD57E299A52B3E(CustomAttributesCache* cache)
@@ -2682,12 +2671,12 @@ static void AndroidAssetPackInfo_t40D47E5ADDC19B0BF0AB8A167604FD0DAA029C30_Custo
 static void AndroidAssetPackInfo_t40D47E5ADDC19B0BF0AB8A167604FD0DAA029C30_CustomAttributesCacheGenerator_U3CstatusU3Ek__BackingField(CustomAttributesCache* cache)
 {
 	{
-		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[0];
-		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
 	}
 	{
-		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[1];
-		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[1];
+		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
 	}
 }
 static void AndroidAssetPackInfo_t40D47E5ADDC19B0BF0AB8A167604FD0DAA029C30_CustomAttributesCacheGenerator_U3CsizeU3Ek__BackingField(CustomAttributesCache* cache)
@@ -2704,34 +2693,34 @@ static void AndroidAssetPackInfo_t40D47E5ADDC19B0BF0AB8A167604FD0DAA029C30_Custo
 static void AndroidAssetPackInfo_t40D47E5ADDC19B0BF0AB8A167604FD0DAA029C30_CustomAttributesCacheGenerator_U3CbytesDownloadedU3Ek__BackingField(CustomAttributesCache* cache)
 {
 	{
-		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
-		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[0];
+		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
 	}
 	{
-		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[1];
-		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[1];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
 	}
 }
 static void AndroidAssetPackInfo_t40D47E5ADDC19B0BF0AB8A167604FD0DAA029C30_CustomAttributesCacheGenerator_U3CtransferProgressU3Ek__BackingField(CustomAttributesCache* cache)
 {
 	{
-		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
-		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[0];
+		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
 	}
 	{
-		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[1];
-		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[1];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
 	}
 }
 static void AndroidAssetPackInfo_t40D47E5ADDC19B0BF0AB8A167604FD0DAA029C30_CustomAttributesCacheGenerator_U3CerrorU3Ek__BackingField(CustomAttributesCache* cache)
 {
 	{
-		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
-		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[0];
+		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
 	}
 	{
-		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[1];
-		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[1];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
 	}
 }
 static void AndroidAssetPackState_t9471FEB6664CCEFE4E250938A18081E09C5BF151_CustomAttributesCacheGenerator_U3CnameU3Ek__BackingField(CustomAttributesCache* cache)
@@ -2813,23 +2802,23 @@ static void AssetPackManagerStatusQueryCallback_t03F83724132D42E3E1694183B229D34
 static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionGranted(CustomAttributesCache* cache)
 {
 	{
-		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[0];
-		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
 	}
 	{
-		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[1];
-		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[1];
+		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
 	}
 }
 static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionDenied(CustomAttributesCache* cache)
 {
 	{
-		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[0];
-		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
 	}
 	{
-		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[1];
-		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[1];
+		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
 	}
 }
 static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionDeniedAndDontAskAgain(CustomAttributesCache* cache)
@@ -2841,6 +2830,48 @@ static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_Custom
 	{
 		DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 * tmp = (DebuggerBrowsableAttribute_t2FA4793AD1982F5150E07D26822ED5953CD90F53 *)cache->attributes[1];
 		DebuggerBrowsableAttribute__ctor_mAA8BCC1E418754685F320B14A08AC226E76346E5(tmp, 0LL, NULL);
+	}
+}
+static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_add_PermissionGranted_mDBED6DFA5B3A2898DE9431000D3A834121467675(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+	}
+}
+static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_remove_PermissionGranted_m3CC97FC0647DFC9602100389FDEF418226740777(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+	}
+}
+static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_add_PermissionDenied_m7F1B4F77C41737F54DCB2DD42F10F30020AF59D6(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+	}
+}
+static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_remove_PermissionDenied_mA9B931639F421136E4905868D97FB093EB8A6ACE(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+	}
+}
+static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_add_PermissionDeniedAndDontAskAgain_mEE75EECE51ECDC42DB722EB2EBEDAC5C4DA0BF98(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
+	}
+}
+static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_remove_PermissionDeniedAndDontAskAgain_m14E65AEB4D5DD6CA2DEF5A57CA65536BC0A270A0(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C * tmp = (CompilerGeneratedAttribute_t39106AB982658D7A94C27DEF3C48DB2F5F7CD75C *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m9DC3E4E2DA76FE93948D44199213E2E924DCBE35(tmp, NULL);
 	}
 }
 static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_onPermissionGranted_mBB916DA5EB099196DD500F6D9267CFE10FEA504D(CustomAttributesCache* cache)
@@ -2865,7 +2896,7 @@ static void PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_Custom
 	}
 }
 IL2CPP_EXTERN_C const CustomAttributesCacheGenerator g_UnityEngine_AndroidJNIModule_AttributeGenerators[];
-const CustomAttributesCacheGenerator g_UnityEngine_AndroidJNIModule_AttributeGenerators[204] = 
+const CustomAttributesCacheGenerator g_UnityEngine_AndroidJNIModule_AttributeGenerators[210] = 
 {
 	jvalue_t220BECEE73180D6A4DE0F66CB6BA852EC6A5B587_CustomAttributesCacheGenerator,
 	AndroidJNIHelper_t42BC87A499D1F8E320AC8D663692540AA0DE2847_CustomAttributesCacheGenerator,
@@ -3050,6 +3081,12 @@ const CustomAttributesCacheGenerator g_UnityEngine_AndroidJNIModule_AttributeGen
 	AssetPackManagerDownloadStatusCallback_tB334C95594ED6B8F24BB8D80EB23EE869AF3FC26_CustomAttributesCacheGenerator_AssetPackManagerDownloadStatusCallback_onStatusUpdate_m44D883114BD08904CBB400DCE804E717DE8ED013,
 	AssetPackManagerMobileDataConfirmationCallback_tEFCA4AB1DB4B4FE541A11D93E10A7DDDEE0DA0FA_CustomAttributesCacheGenerator_AssetPackManagerMobileDataConfirmationCallback_onMobileDataConfirmationResult_m42051286478D725B40BE79A858A6259F5B656436,
 	AssetPackManagerStatusQueryCallback_t03F83724132D42E3E1694183B229D34473C848A6_CustomAttributesCacheGenerator_AssetPackManagerStatusQueryCallback_onStatusResult_mAE80EC296017FCE05F410661ADBCA0692A153D95,
+	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_add_PermissionGranted_mDBED6DFA5B3A2898DE9431000D3A834121467675,
+	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_remove_PermissionGranted_m3CC97FC0647DFC9602100389FDEF418226740777,
+	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_add_PermissionDenied_m7F1B4F77C41737F54DCB2DD42F10F30020AF59D6,
+	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_remove_PermissionDenied_mA9B931639F421136E4905868D97FB093EB8A6ACE,
+	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_add_PermissionDeniedAndDontAskAgain_mEE75EECE51ECDC42DB722EB2EBEDAC5C4DA0BF98,
+	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_remove_PermissionDeniedAndDontAskAgain_m14E65AEB4D5DD6CA2DEF5A57CA65536BC0A270A0,
 	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_onPermissionGranted_mBB916DA5EB099196DD500F6D9267CFE10FEA504D,
 	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_onPermissionDenied_mC74555C82B9CCFB6017BCCDD42E25BB1B9D87958,
 	PermissionCallbacks_tEFD0C5D952680AB03BFF103ACB135126A713DBC5_CustomAttributesCacheGenerator_PermissionCallbacks_onPermissionDeniedAndDontAskAgain_m12D7416B65ECDCF9CBB925DDBE73CF9F0C50058B,

@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
 import { View, Button } from 'react-native';
-import { CommonActions } from '@react-navigation/native';
 
 interface IMessage {
   gameObject: string;
@@ -10,9 +9,10 @@ interface IMessage {
 }
 
 let messageFromUnity = {
-  playerName: "",
-  roomName: "",
-  playerColor: ""
+  _playerName: "",
+  _roomName: "",
+  _playerColor: "",
+  _isMuted: true,
 }
 
 const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => {
@@ -28,9 +28,10 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
   const returnToHome = async () => {
     //unityRef.current?.unloadUnity();
     navigation.navigate('Home', {
-      playerName: messageFromUnity.playerName,
-      roomName: messageFromUnity.roomName,
-      playerColor: messageFromUnity.playerColor,
+      _playerName: messageFromUnity._playerName,
+      _roomName: messageFromUnity._roomName,
+      _playerColor: messageFromUnity._playerColor,
+      _isMuted: messageFromUnity._isMuted,
     });
   }
 
@@ -50,10 +51,10 @@ const Unity = ({ navigation, route }: { navigation: undefined, route: any }) => 
       messageFromUnity = JSON.parse(message);
     } catch {
       if (message == "Leave unity") {
-        console.log("log", message);
+        console.log("Unity", message);
         returnToHome();
         //unityRef.current?.postMessage("ReactUnity", "unloadUnity", "");
-      } else console.log("log", message);
+      } else console.log("Unity", message);
     }
   }
 

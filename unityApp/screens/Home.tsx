@@ -1,27 +1,76 @@
-import { CommonActions } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+let unityUserInfo = {
+  _playerName: "",
+  _roomName: "",
+  _playerColor: "0,0,1",
+  _isMuted: true,
+}
+
+const setData = async (param: any) => {
+  try {
+    console.log("React [Home]", "Setting new user data.")
+    const value = JSON.stringify(param);
+    await AsyncStorage.setItem('@unity_user_info', value);
+    return true;
+  } catch (e) {
+    console.log("React [Home]", "Unable to set data: " + e);
+    return false;
+  }
+}
+
+const getData = (key: string) => {
+  try {
+    console.log("React [Home]", "Receiving user data.")
+    const value = AsyncStorage.getItem(key);
+    if (value !== null)
+      return value;
+  } catch (e) {
+    console.log("React [Home]", "Unable to get data: " + e)
+    return null;
+  }
+}
 
 const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
   const [playerName, setPlayerName] = useState("");
   const [roomName, setRoomName] = useState("");
-  var lastPlayerName = "";
-  var lastRoomName = "";
-  var isTextVisible = false;
-
-  if (route?.params) {
-    isTextVisible = true;
-    lastPlayerName = route.params.playerName;
-    lastRoomName = route.params.roomName;
-  }
+  const [unityInfo, setUnity] = useState<typeof unityUserInfo>();
+  const [isNewValue, setValue] = useState<boolean>(false);
+  const [isTextVisible, setText] = useState<boolean>(false);
+  //var isNewValue = false;
 
   const goToUnity = () => {
+    if (unityInfo) unityUserInfo = unityInfo;
+    if (unityUserInfo._playerName != playerName) unityUserInfo._playerName = playerName;
+    if (unityUserInfo._roomName != roomName) unityUserInfo._roomName = roomName;
     navigation.navigate('Unity', {
-      playerName: playerName,
-      roomName: roomName,
-      playerColor: "0,0,1", //r,g,b colors
+      _playerName: unityUserInfo._playerName,
+      _roomName: unityUserInfo._roomName,
+      _playerColor: unityUserInfo._playerColor, //r,g,b colors
+      _isMuted: unityUserInfo._isMuted,
     });
   }
+
+  try {
+    if (route?.params != null) {
+      setData(route?.params).then((value) => {
+        if (value) setValue(value);
+      });
+    }
+  } catch {
+
+  }
+
+  useEffect(() => {
+    getData('@unity_user_info')?.then(checkData => {
+      if (checkData != null) {
+        setUnity(JSON.parse(checkData));
+        setText(true);
+      }
+    });
+  }, [])
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -39,11 +88,13 @@ const Home = ({ navigation, route }: { navigation: undefined, route: any }) => {
       />
       <Button disabled={playerName == "" || roomName == ""} title="Start" onPress={() => goToUnity()} />
       <View style={{ width: 400, padding: 20 }}>
-        {isTextVisible && <Text style={styles.text}>Last player name: {lastPlayerName}</Text>}
-        {isTextVisible && <Text style={styles.text}>Last room name: {lastRoomName}</Text>}
+        {isTextVisible && unityInfo && <Text style={styles.text}>Last player name: {unityInfo._playerName}</Text>}
+        {isTextVisible && unityInfo && <Text style={styles.text}>Last room name: {unityInfo._roomName}</Text>}
+        {isTextVisible && unityInfo && <Text style={styles.text}>Muted: {String(unityInfo._isMuted)}</Text>}
       </View>
     </View>
   );
+
 };
 
 const styles = StyleSheet.create({
@@ -61,31 +112,3 @@ const styles = StyleSheet.create({
 });
 
 export default Home;
-
-/*
-  <Picker style={{ width: 400 }}
-        selectedValue={shape}
-        onValueChange={(itemValue) =>
-          setShape(itemValue)
-        }>
-        <Picker.Item label="Choose shape" />
-        <Picker.Item label="Cube" value="Cube" />
-        <Picker.Item label="Sphere" value="Sphere" />
-        <Picker.Item label="Cylinder" value="Cylinder" />
-      </Picker>
-      <Picker style={{ width: 400 }}
-        selectedValue={color}
-        onValueChange={(itemValue) =>
-          setColor(itemValue)
-        }>
-        <Picker.Item label="Choose color" />
-        <Picker.Item label="Red" value="Red" />
-        <Picker.Item label="Green" value="Green" />
-        <Picker.Item label="Blue" value="Blue" />
-      </Picker>
-      <Button disabled={shape == "" || color == ""} title="Start Unity" onPress={() => goToUnity()} />
-      <View style={{ width: 400, padding: 20 }}>
-        {isTextVisible && <Text style={{ fontSize: 17 }}>Last shape: {lastShape}</Text>}
-        {isTextVisible && <Text style={{ fontSize: 17 }}>Last color: {lastColor}</Text>}
-      </View>
-*/
