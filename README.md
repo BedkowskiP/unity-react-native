@@ -1,9 +1,14 @@
 # unity-screens
 
-~~Going back from unity to home screen cause same problem as [here](https://github.com/azesmway/react-native-unity/issues/38)~~
 
-Fixed (22.09.2022):
-Replace the code inside `node_modules\@azesmway\react-native-unity\android\src\main\java\com\azesmwayreactnativeunity\ReactNativeUnity.java` with:
+Extended [project](https://github.com/BedkowskiP/react-native-unity) with photonPun and photonVoice.
+
+ReactNative project is inside `UnityApp` folder. Unity source project is inside `unitySourceProject` folder.
+
+### Main fixex:
+1. Destroy and instantiate new PhotonMono object inside unity everytime we leave and enter unity.
+2. Replaced the code inside `node_modules\@azesmway\react-native-unity\android\src\main\java\com\azesmwayreactnativeunity\ReactNativeUnity.java` with:
+
 ```
 package com.azesmwayreactnativeunity;
 
@@ -59,7 +64,6 @@ public class ReactNativeUnity {
                 if ((flag & WindowManager.LayoutParams.FLAG_FULLSCREEN) == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
                     fullScreen = true;
                 }
-
                 unityPlayer = new UnityPlayer(activity, new IUnityPlayerLifecycleEvents() {
                     @Override
                     public void onUnityPlayerUnloaded() {
@@ -71,19 +75,16 @@ public class ReactNativeUnity {
                         callback.onQuit();
                     }
                 });
-
                 try {
                     // wait a moment. fix unity cannot start when startup.
                     Thread.sleep(1000);
                 } catch (Exception e) {
                 }
-
                 // start unity
                 addUnityViewToBackground();
                 unityPlayer.windowFocusChanged(true);
                 unityPlayer.requestFocus();
                 unityPlayer.resume();
-
                 // restore window layout
                 if (!fullScreen) {
                     activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
