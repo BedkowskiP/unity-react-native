@@ -1,4 +1,4 @@
-# unity-screens
+# unity-react-native
 
 
 Extended [project](https://github.com/BedkowskiP/react-native-unity) with photonPun and photonVoice.
