@@ -3,7 +3,7 @@
 
 Extended [project](https://github.com/BedkowskiP/react-native-unity) with photonPun and photonVoice.
 
-ReactNative project is inside `UnityApp` folder. Unity source project is inside `unitySourceProject` folder.
+ReactNative project is inside `unityApp` folder. Unity source project is inside `unitySourceProject` folder.
 
 ### Main fixex:
 1. Destroy and instantiate new PhotonMono object inside unity everytime we leave and enter unity.
